@@ -1,0 +1,74 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-top: 200px;
+}
+
+form > h2 {
+    margin-left: 15px;
+    font-size: 26px;
+}
+
+form > button {
+    height: 48px;
+    width: 370px;
+    font-size: 20px;
+    background-color: #007AFF;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    margin-left: 18px;
+}
+
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+}
+
+div > input {
+    height: 48px;
+    width: 360px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(197, 196, 196);
+    color: black;
+    font-size: 20px;
+    padding: 5px 5px;
+}
+
+div > label {
+    margin-left: 30px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.link_to_res > p > a{
+    text-decoration: none;
+    margin-left: 254px;
+    color: #007AFF;
+}
+
+.link_to_sing_up {
+    display: flex;
+    margin-left: 61px;
+}
+
+.link_to_sing_up > p > a {
+    text-decoration: none;
+    color: #007AFF;
+}
+
+
+.line{
+    width: 342px;
+    height: 0; 
+    border-top: 0.5px solid rgb(173, 173, 173);
+    margin-top: 40px;
+    margin-left: 18px;
+}
+
+
+

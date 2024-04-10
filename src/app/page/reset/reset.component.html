@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="dataForm">
+    <h2>Reset access</h2>
+    <div>
+        <label>Login</label>
+        <input formControlName="email" placeholder="Email"/>
+        <div *ngIf="dataForm.get('email')?.errors && dataForm.get('email')?.touched" style="color: red;">
+            <p *ngIf="dataForm.get('email')?.errors?.required">Поля обязательно к заполнению</p>
+            <p *ngIf="dataForm.get('email')?.errors?.pattern">Некорретно написана почта</p>
+        </div>
+    </div>
+    <button>Reset</button>
+    <div class="line">
+
+    </div>
+    <p><a routerLink="/">Sing in</a></p>
+</form>

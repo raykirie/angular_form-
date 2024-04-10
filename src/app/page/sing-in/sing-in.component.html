@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="dataForm">
+    <h2>Nice to see you again</h2>
+    <div>
+        <label>Login</label>
+        <input formControlName="email" placeholder="Email"/>
+        <div *ngIf="dataForm.get('email')?.errors && dataForm.get('email')?.touched" style="color: red;">
+            <p *ngIf="dataForm.get('email')?.errors?.required">Поля обязательно к заполнению</p>
+            <p *ngIf="dataForm.get('email')?.errors?.pattern">Неверно написана почта</p>
+        </div>
+    </div>
+    <div>
+        <label>Password</label>
+        <input formControlName="password" placeholder="Enter password"/>
+        <div *ngIf="dataForm.get('password')?.errors && dataForm.get('password')?.touched" style="color: red;">
+            <p *ngIf="dataForm.get('password')?.errors?.required">Поля обязательно к заполнению</p>
+            <p *ngIf="dataForm.get('password')?.errors?.pattern">Некорректный пароль</p>
+        </div>
+    </div>
+    <div class="link_to_res">
+        <p><a routerLink="/reset">Forgot password?</a></p>
+    </div>
+    <button>Sing in</button>
+    <div class="line">
+
+    </div>
+    <div class="link_to_sing_up">
+        <p>Dont have an account?<a style="margin-left: 15px;" routerLink="/singup">Sing up now</a></p>
+    </div>
+</form>

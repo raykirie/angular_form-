@@ -1,0 +1,31 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="dataForm">
+    <h2>Now create your account</h2>
+    <div>
+        <label>Login</label>
+        <input formControlName="email" placeholder="Email"/>
+        <div *ngIf="dataForm.get('email')?.errors && dataForm.get('email')?.touched" style="color: red;">
+            <p *ngIf="dataForm.get('email')?.errors?.required">Поля обязательно к заполнению</p>
+            <p *ngIf="dataForm.get('email')?.errors?.pattern">Некорретно написана почта</p>
+        </div>
+    </div>
+    <div>
+        <label>Password</label>
+        <input placeholder="Enter password" formControlName="password"/>
+        <div *ngIf="dataForm.get('password')?.errors && dataForm.get('password')?.touched" style="color: red;">
+            <p *ngIf="dataForm.get('password')?.errors?.required">Поля обязательно к заполнению</p>
+            <p *ngIf="dataForm.get('password')?.errors?.pattern">Некорректный пароль</p>
+        </div>
+    </div>
+    <div>
+        <label>Second password</label>
+        <input placeholder="Enter password" formControlName="secondPasssword"/>
+        <div *ngIf="(dataForm?.errors || dataForm.get('secondPasssword')?.errors) && dataForm.get('secondPasssword')?.touched" style="color: red;">
+            <p *ngIf="dataForm.get('secondPasssword')?.errors?.required">Поля обязательно к заполнению</p>
+            <p *ngIf="dataForm?.errors?.passValidate">Пароли не совпадают</p>
+        </div>
+    </div>
+    <button>Sing up</button>
+    <div class="line">
+
+    </div>
+    <p><a routerLink="/">Sing in</a></p>
